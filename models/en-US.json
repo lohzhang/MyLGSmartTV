@@ -1,0 +1,271 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "tv",
+      "intents": [
+        {
+          "name": "GetAppListIntent",
+          "samples": [
+            "to show app list"
+          ]
+        },
+        {
+          "name": "TurnOffIntent",
+          "samples": [
+            "to turn off"
+          ]
+        },
+        {
+          "name": "ShowToastIntent",
+          "slots": [
+            {
+              "name": "Message",
+              "type": "TEST"
+            }
+          ],
+          "samples": [
+            "to show {Message}"
+          ]
+        },
+        {
+          "name": "SetVolumeIntent",
+          "slots": [
+            {
+              "name": "VolumeNumber",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "to set volume to {VolumeNumber}"
+          ]
+        },
+        {
+          "name": "SetVolumeShortIntent",
+          "slots": [
+            {
+              "name": "VolumeControl",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "VolumeControlDirection",
+              "type": "VOLUME_CONTROL_DIRECTION"
+            }
+          ],
+          "samples": [
+            "volume {VolumeControlDirection} {VolumeControl}"
+          ]
+        },
+        {
+          "name": "OpenAppIntent",
+          "slots": [
+            {
+              "name": "AppName",
+              "type": "APP_NAMES"
+            }
+          ],
+          "samples": [
+            "open {AppName}"
+          ]
+        },
+        {
+          "name": "PlaybackIntent",
+          "slots": [
+            {
+              "name": "Function",
+              "type": "PLAYBACK_CONTROLS"
+            }
+          ],
+          "samples": [
+            "to {Function}"
+          ]
+        },
+        {
+          "name": "SwitchInputIntent",
+          "samples": [
+            "to switch input"
+          ]
+        },
+        {
+          "name": "CursorIntent",
+          "slots": [
+            {
+              "name": "Direction",
+              "type": "CURSOR_EVENT"
+            }
+          ],
+          "samples": [
+            "to move {Direction}",
+            "to go {Direction}",
+            "to select"
+          ]
+        },
+        {
+          "name": "PlayNextIntent",
+          "samples": [
+            "to play next"
+          ]
+        },
+        {
+          "name": "MuteIntent",
+          "samples": [
+            "to mute",
+            "to silence"
+          ]
+        },
+        {
+          "name": "UnmuteIntent",
+          "samples": [
+            "to unmute",
+            "to recover volume"
+          ]
+        },
+        {
+          "name": "PassBeginningIntent",
+          "samples": [
+            "to pass beginning",
+            "to pass music",
+            "to pass header"
+          ]
+        },
+        {
+          "name": "PlayProgressControlIntent",
+          "slots": [
+            {
+              "name": "playControlDirection",
+              "type": "PLAY_CONTROL_DIRECTION"
+            },
+			{
+			  "name": "playControlStep",
+			  "type": "AMAZON.NUMBER"
+			}
+		  ],
+          "samples": [
+            "to {playControlDirection} by {playControlStep}",
+            "to {playControlDirection} {playControlStep}"
+          ]
+      }],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Youtube"
+              }
+            },
+            {
+              "name": {
+                "value": "Amazon Instant Video"
+              }
+            }
+          ],
+          "name": "APP_NAMES"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "play"
+              }
+            },
+            {
+              "name": {
+                "value": "pause"
+              }
+            },
+            {
+              "name": {
+                "value": "stop"
+              }
+            }
+          ],
+          "name": "PLAYBACK_CONTROLS"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "up"
+              }
+            },
+            {
+              "name": {
+                "value": "down"
+              }
+            }
+          ],
+          "name": "VOLUME_CONTROL_DIRECTION"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "forward"
+              }
+            },
+            {
+              "name": {
+                "value": "move"
+              }
+            },
+            {
+              "name": {
+                "value": "rewind"
+              }
+            },
+            {
+              "name": {
+                "value": "backward"
+              }
+            }
+          ],
+          "name": "PLAY_CONTROL_DIRECTION"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "test"
+              }
+            },
+            {
+              "name": {
+                "value": "Shasha"
+              }
+            }
+          ],
+          "name": "TEST"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "up"
+              }
+            },
+            {
+              "name": {
+                "value": "down"
+              }
+            },
+            {
+              "name": {
+                "value": "left"
+              }
+            },
+            {
+              "name": {
+                "value": "right"
+              }
+            },
+            {
+              "name": {
+                "value": "back"
+              }
+            }
+          ],
+          "name": "CURSOR_EVENT"
+        }
+      ]
+    }
+  }
+}
