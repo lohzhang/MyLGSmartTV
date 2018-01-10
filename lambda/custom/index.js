@@ -99,6 +99,9 @@ var handlers = {
         let body = {};
 		body.volumeControlDirection = this.event.request.intent.slots.VolumeControlDirection.value;
 		body.volumeControl = this.event.request.intent.slots.VolumeControl.value;
+		if (body.volumeControl === '?') {
+			body.volumeControl = '4';
+		}
 		console.log('volume control is: ' + body.volumeControlDirection + ' ' + body.volumeControl);
 		let self = this;
 		let responseUtterance = '';
@@ -154,7 +157,7 @@ var handlers = {
 
         let self = this;
         http.request(requestOptions, function() {
-            self.emit(':tell', controlOperation + ' operation done.');
+            self.emit(':tell', controlOperation + ' done.');
         }).end();        
     },
     'SwitchInputIntent': function () {
@@ -213,6 +216,10 @@ var handlers = {
 		let body = {};
 		body.playProgressControlDirection = this.event.request.intent.slots.playControlDirection.value;
 		body.playProgressControlStep = this.event.request.intent.slots.playControlStep.value;
+		// Add this hack to workaround when Alexa cannot identify number 4
+		if (body.playProgressControlStep === '?') {
+			body.playProgressControlStep = '4';
+		}
 		let self = this;
 		let isForward = body.playProgressControlDirection === 'move' || body.playProgressControlDirection === 'forward';
 		let respondMessage = isForward ? 'forwarded' : 'rewinded';

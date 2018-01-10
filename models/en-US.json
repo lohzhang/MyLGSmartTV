@@ -52,7 +52,9 @@
             }
           ],
           "samples": [
-            "volume {VolumeControlDirection} {VolumeControl}"
+            "volume {VolumeControlDirection} {VolumeControl}",
+            "volume {VolumeControlDirection} {VolumeControl} steps",
+            "volume {VolumeControlDirection} by {VolumeControl} steps"
           ]
         },
         {
@@ -140,7 +142,9 @@
 			}
 		  ],
           "samples": [
-            "to {playControlDirection} by {playControlStep}",
+            "to {playControlDirection} {playControlStep} steps",
+            "to {playControlDirection} by {playControlStep} steps",
+            "to {playControlDirection} {playControlStep} units",
             "to {playControlDirection} {playControlStep}"
           ]
       }],
